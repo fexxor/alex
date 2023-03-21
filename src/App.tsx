@@ -1,24 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import fbLogo from "./fb.svg";
+import vimeoLogo from "./vimeo.svg";
+import imdbLogo from "./imdb.svg";
+import Work from "./pages/Work/Work";
+import About from "./pages/About/About";
+import News from "./pages/News/News";
+import { HashRouter, Route, Routes, Navigate, NavLink } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HashRouter //basename={currentPath || ""}
+      >
+        <main>
+          <header className="App-header">
+            <a href="/#/work">
+              <h1>ALEXANDER KEREKLIDIS TURPIN</h1>
+            </a>
+            <nav>
+              <div className="nav-links">
+                <NavLink
+                  to="/work"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Work
+                </NavLink>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  to="/news"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  News
+                </NavLink>
+              </div>
+              <div className="socials">
+                <a href="https://www.facebook.com/alexander.kereklidisturpin">
+                  <img src={fbLogo}></img>
+                </a>
+                <a href="https://vvimeo.com">
+                  <img src={vimeoLogo}></img>
+                </a>
+                <a href="https://www.imdb.com/name/nm7794377/?ref_=tt_ov_dr">
+                  <img src={imdbLogo}></img>
+                </a>
+              </div>
+            </nav>
+          </header>
+          <Routes>
+            <Route path="*" element={<Navigate to="/work"></Navigate>} />
+            <Route path="work" Component={Work} />
+            <Route path="about" Component={About} />
+            <Route path="news" Component={News} />
+          </Routes>
+        </main>
+      </HashRouter>
     </div>
   );
 }

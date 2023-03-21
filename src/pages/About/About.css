@@ -1,0 +1,32 @@
+.About {
+  display: flex;
+  flex-direction: row;
+}
+
+.About img {
+  max-width: 100%;
+  width: auto;
+  margin-right: 2rem;
+}
+
+.About .info > :not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .About {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .About img {
+    max-width: 100%;
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .About .info > :not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
