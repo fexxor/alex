@@ -43,10 +43,10 @@ function App() {
                 <a href="https://www.facebook.com/alexander.kereklidisturpin">
                   <img src={fbLogo}></img>
                 </a>
-                <a href="https://vvimeo.com">
+                <a href="https://vimeo.com/user17012207">
                   <img src={vimeoLogo}></img>
                 </a>
-                <a href="https://www.imdb.com/name/nm7794377/?ref_=tt_ov_dr">
+                <a href="https://www.imdb.com/name/nm7794377">
                   <img src={imdbLogo}></img>
                 </a>
               </div>

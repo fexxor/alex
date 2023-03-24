@@ -4,21 +4,10 @@ import "./News.css";
 const news: NewsItem[] = [
   {
     timestamp: new Date("2020-01-01"),
-    title: "This is some good news",
-    imageUrl:
-      "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_169627/cf_259/cupcakes.jpg",
+    title: "4 new short films coming up in 2023!",
+    imageUrl: "alex/images/NEWS_4_new_short_films.png",
     paragraphs: [
-      "Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake. Muffin danish chocolate soufflé pastry icing bonbon oat cake. Powder cake jujubes oat cake. Lemon drops tootsie roll marshmallow halvah carrot cake.",
-    ],
-  },
-  {
-    timestamp: new Date("2020-01-01"),
-    title: "Once upon a time",
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Hansel-and-gretel-rackham.jpg",
-    paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "In February, I had the great pleasure of working with the 3rd year acting students at Nord Universitetet in Verdal. During two weeks we shot 4 short films together. All the films are now in post production and will be released later in 2023!",
     ],
   },
 ];

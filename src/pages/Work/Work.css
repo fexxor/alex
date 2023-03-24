@@ -1,5 +1,68 @@
-.video-fullscreen {
+.Work .video-fullscreen {
   position: fixed;
   inset: 0;
   background-color: red;
+}
+
+.Work .close-button {
+  display: block;
+  width: 100%;
+  text-align: right;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  line-height: 0.8;
+  padding: 1.2rem;
+}
+
+.Work .container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+.Work .foo {
+  flex: 1;
+}
+
+.Work iframe {
+  margin-right: 2rem;
+  aspect-ratio: 3 / 2;
+}
+
+.Work .info {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.Work p {
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .Work .close-button {
+    padding: 0.2rem;
+  }
+
+  .Work .container {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .Work iframe {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+  }
+
+  .Work .foo {
+    flex: 1;
+  }
+
+  .Work p {
+    padding-bottom: 1rem;
+  }
 }
