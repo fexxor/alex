@@ -1,4 +1,5 @@
 export type Video = {
+  id: string;
   title: string;
   info: {
     title: string;
@@ -7,6 +8,4 @@ export type Video = {
     awardsAndNominations?: string[];
     screenedAt?: string[];
   };
-  imageUrl: string;
-  id: string;
 };

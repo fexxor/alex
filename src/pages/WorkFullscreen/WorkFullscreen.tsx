@@ -1,7 +1,7 @@
-import Thumbnail from "../../components/Thumbnail/Thumbnail";
 import { Video } from "../../types/Video";
-import "./Work.css";
 import React from "react";
+import "./WorkFullscreen.css";
+import { useParams } from "react-router-dom";
 
 const videos: Video[] = [
   {
@@ -102,18 +102,54 @@ const videos: Video[] = [
   },
 ];
 
-class Work extends React.Component<{}, { selectedVideo: Video | undefined }> {
-  render() {
-    return (
-      <div className="Work">
-        <div className="videos">
-          {videos.map((video) => (
-            <Thumbnail video={video} key={video.id}></Thumbnail>
-          ))}
+const WorkFullscreen: React.FC = () => {
+  const { id } = useParams();
+
+  const selectedVideo = videos.find((v) => v.id === id);
+
+  return (
+    <div className="WorkFullscreen">
+      <div className="video-fullscreen">
+        <div className="top-bar">
+          <span>{selectedVideo?.info.title}</span>
+          <a className="close-button" href="/#/work">
+            ×
+          </a>
+        </div>
+        <div className="container">
+          <div className="video-container">
+            <iframe
+              src={"https://player.vimeo.com/video/" + selectedVideo?.id}
+              allow="autoplay; fullscreen"
+            ></iframe>
+          </div>
+          <div className="info">
+            <p hidden={!selectedVideo?.info.description}>
+              {selectedVideo?.info.description}
+            </p>
+            <p hidden={!selectedVideo?.info.starring}>
+              Starring: {selectedVideo?.info.starring?.join(", ")}
+            </p>
+            <p hidden={!selectedVideo?.info.awardsAndNominations}>
+              <ul>
+                {selectedVideo?.info.awardsAndNominations?.map((a) => (
+                  <li>
+                    <div className="awards-and-nominations">
+                      <span>-</span>
+                      {a}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </p>
+            <p hidden={!selectedVideo?.info.screenedAt}>
+              Screened at: {selectedVideo?.info.screenedAt?.join(", ") + "."}
+            </p>
+          </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default Work;
+export default WorkFullscreen;

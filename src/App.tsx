@@ -4,6 +4,7 @@ import fbLogo from "./fb.svg";
 import vimeoLogo from "./vimeo.svg";
 import imdbLogo from "./imdb.svg";
 import Work from "./pages/Work/Work";
+import WorkFullscreen from "./pages/WorkFullscreen/WorkFullscreen";
 import About from "./pages/About/About";
 import News from "./pages/News/News";
 import { HashRouter, Route, Routes, Navigate, NavLink } from "react-router-dom";
@@ -55,6 +56,7 @@ function App() {
           <Routes>
             <Route path="*" element={<Navigate to="/work"></Navigate>} />
             <Route path="work" Component={Work} />
+            <Route path="view/:id" Component={WorkFullscreen} />
             <Route path="about" Component={About} />
             <Route path="news" Component={News} />
           </Routes>

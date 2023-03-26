@@ -1,0 +1,100 @@
+.WorkFullscreen .video-fullscreen {
+  position: fixed;
+  height: 100%;
+  inset: 0;
+  background-color: #222;
+  padding: 2rem 4rem;
+  overflow-y: auto;
+}
+
+.WorkFullscreen .top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.WorkFullscreen .top-bar span {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.WorkFullscreen .close-button {
+  text-align: right;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  line-height: 0.5;
+  padding: 0 0 1rem 1rem;
+  align-self: baseline;
+}
+
+.WorkFullscreen .container {
+  display: flex;
+  flex-direction: row;
+}
+
+.WorkFullscreen .video-container {
+  flex: 2;
+}
+
+.WorkFullscreen iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  background-color: black;
+}
+
+.WorkFullscreen .info {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 2rem;
+}
+
+.WorkFullscreen p {
+  padding-bottom: 2rem;
+}
+
+.awards-and-nominations {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.awards-and-nominations span {
+  padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .WorkFullscreen .video-fullscreen {
+    padding: 1rem;
+  }
+
+  .WorkFullscreen .top-bar span {
+    font-size: 1.5rem;
+  }
+
+  .WorkFullscreen .container {
+    flex-direction: column;
+  }
+
+  .WorkFullscreen iframe {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+  }
+
+  .WorkFullscreen .video-container {
+    flex: 1;
+  }
+
+  .WorkFullscreen p {
+    padding-bottom: 1rem;
+  }
+
+  .WorkFullscreen .info {
+    padding-left: 0;
+  }
+}

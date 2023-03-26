@@ -5,12 +5,11 @@ import { Video } from "../../types/Video";
 
 type ThumbnailProps = {
   video: Video;
-  onClick: (video: Video) => (event: unknown) => void;
 };
 
-const Thumbnail: React.FC<ThumbnailProps> = ({ video, onClick }) => {
+const Thumbnail: React.FC<ThumbnailProps> = ({ video }) => {
   return (
-    <div className="Thumbnail" onClick={onClick(video)}>
+    <a className="Thumbnail" href={"/#/view/" + video.id}>
       <img
         src={"https://vumbnail.com/" + video.id + ".jpg"}
         alt={video.title}
@@ -20,7 +19,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ video, onClick }) => {
       <div className="play-wrapper">
         <img className="play-icon" src={playSvg} />
       </div>
-    </div>
+    </a>
   );
 };
 
