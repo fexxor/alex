@@ -11,7 +11,10 @@ type ThumbnailProps = {
 const Thumbnail: React.FC<ThumbnailProps> = ({ video, onClick }) => {
   return (
     <div className="Thumbnail" onClick={onClick(video)}>
-      <img src={video.imageUrl} alt={video.title} />
+      <img
+        src={"https://vumbnail.com/" + video.id + ".jpg"}
+        alt={video.title}
+      />
       <div className="overlay"></div>
       <p className="video-title">{video.title}</p>
       <div className="play-wrapper">

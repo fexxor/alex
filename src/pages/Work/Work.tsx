@@ -6,27 +6,103 @@ import React from "react";
 const videos: Video[] = [
   {
     title: "Generation Mars",
-    href: "https://vimeo.com/810907356",
+    info: {
+      title: "GENERATION MARS 25 min (2016)",
+      description: "Graduation film from The Norwegian Film School.",
+      starring: [
+        "Inga Ibsdotter Lilleaas",
+        "Samantha Lawson",
+        "Bernt Bjørn",
+        "Ingegjerd Egeberg",
+      ],
+      awardsAndNominations: [
+        "Student Academy Award finalist in the foreign language section.",
+        "CINE Golden Eagle Finalist (Student drama).",
+        "Won Best Director at Global Youth Film Festival Lakshmipur.",
+        "Won Best Narrative Short Film at Sydney World Film Festival",
+        "Won Best Drama Short at Berlin Sci-fi Filmfest.",
+        "Won Best Cinematography, Best Sound Design, Best Original Score, Best Supporting Actress and the Bronze Medal in the student category at Sweden's Short Film Festival.",
+      ],
+      screenedAt: [
+        "New Filmmakers LA",
+        "Bogota Short Film Festival",
+        "Flickers Rhode Island IFF",
+        "Washington DC Short Film Festival",
+        "Big Sur Film Festival",
+        "Kyoto International Student Film Festival",
+        "First Step Film Festival (Albania 2017)",
+        "The Norwegian Film Festival Haugesund",
+        "Kristiansand International Childrens Film Festival",
+        "Viten Filmfestival Bergen",
+        "Amandus Studentfilmfestival",
+        "Bermuda International Film Festival",
+        "Zlin Dog International Film Festival",
+        "Brussels Independent Film Festival",
+        "Boston Science Fiction Film Festival",
+        "Festival At The Fringe Tranås",
+        "Aesthetica Short Film Festival",
+      ],
+    },
+    id: "810907356",
     imageUrl: "https://vumbnail.com/810907356.jpg",
   },
   {
     title: "PARADIS trailer",
-    href: "https://vimeo.com/810912431",
+    info: {
+      title: "PARADIS 17 min (Mer Film, 2021)",
+      starring: [
+        "Aile Viola Løkken Haggärde",
+        "Mathea Olava Lian",
+        "Pangea Mcnair",
+        "Ira Johansen",
+        "Trude Øines",
+      ],
+      screenedAt: [
+        "Bergen International Film Festival",
+        "The Norwegian Short Film Festival",
+        "Edmonton International Film Festival",
+        "Julien Dubuque International Film Festival",
+      ],
+    },
+    id: "810912431",
     imageUrl: "https://vumbnail.com/810912431.jpg",
   },
   {
     title: "Kill the Rich teaser",
-    href: "https://vimeo.com/251934669",
+    info: {
+      title: "KILL THE RICH 17 min (Independent, 2018)",
+      description: "Premiered at Gothenburg International Film Festival.",
+      starring: ["Melina Tranulis", "Henrik Eilif Borge", "Jon Stensby"],
+      screenedAt: [
+        "STOCKmotion (2018)",
+        "Uppsala International Short Film Festival (2018)",
+        "At the Fringe Tranås (2018)",
+        "Wunderground Film Festival (Belgium 2019)",
+        "Go Short Nijmegen (2019 & 2020)",
+        "Nordic Labor Film Festival (2021)",
+      ],
+    },
+    id: "251934669",
     imageUrl: "https://vumbnail.com/251934669.jpg",
   },
   {
     title: "Todays youth",
-    href: "https://vimeo.com/810843525",
+    info: {
+      title: "TODAYS YOUTH",
+      description: "Premiered at The Swedish Short Film Festival in 2013",
+    },
+    id: "810843525",
     imageUrl: "https://vumbnail.com/810843525.jpg",
   },
   {
     title: "4 minuter äldrevård",
-    href: "https://vimeo.com/810832912",
+    info: {
+      title: "4 MINUTER ÄLDREVÅRD",
+      description:
+        "Premiered at The Swedish Short Film Festival in 2012 (Honorable mention)",
+      screenedAt: ["UNICA, Bulgaria (2012)", "Vårrullen (2013)"],
+    },
+    id: "810832912",
     imageUrl: "https://vumbnail.com/810832912.jpg",
   },
 ];
@@ -61,48 +137,54 @@ class Work extends React.Component<{}, { selectedVideo: Video | undefined }> {
             <Thumbnail
               video={video}
               onClick={this.setSelectedVideo}
-              key={video.href}
+              key={video.id}
             ></Thumbnail>
           ))}
         </div>
         <div className="video-fullscreen" hidden={!this.state.selectedVideo}>
-          <button
-            className="close-button"
-            onClick={this.setSelectedVideo(undefined)}
-          >
-            ×
-          </button>
+          <div className="top-bar">
+            <span>{this.state.selectedVideo?.info.title}</span>
+            <button
+              className="close-button"
+              onClick={this.setSelectedVideo(undefined)}
+            >
+              ×
+            </button>
+          </div>
           <div className="container">
-            <div className="foo">
+            <div className="video-container">
               <iframe
-                width="853"
-                height="480"
-                src={`https://www.youtube.com/embed/${"c977-5lBJu4"}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded youtube"
-              />
+                src={
+                  "https://player.vimeo.com/video/" +
+                  this.state.selectedVideo?.id
+                }
+                allow="autoplay; fullscreen"
+              ></iframe>
             </div>
             <div className="info">
-              <p>
-                The path of the righteous man is beset on all sides by the
-                iniquities of the selfish and the tyranny of evil men. Blessed
-                is he who, in the name of charity and good will, shepherds the
-                weak through the valley of darkness, for he is truly his
-                brother’s keeper and the finder of lost children. And I will
-                strike down upon thee with great vengeance and furious anger
-                those who would attempt to poison and destroy My brothers. And
-                you will know My name is the Lord when I lay My vengeance upon
-                thee.
+              <p hidden={!this.state.selectedVideo?.info.description}>
+                {this.state.selectedVideo?.info.description}
               </p>
-              <p>
-                Now that we know who you are, I know who I am. I’m not a
-                mistake! It all makes sense! In a comic, you know how you can
-                tell who the arch-villain’s going to be? He’s the exact opposite
-                of the hero. And most times they’re friends, like you and me! I
-                should’ve known way back when… You know why, David? Because of
-                the kids. They called me Mr Glass.
+              <p hidden={!this.state.selectedVideo?.info.starring}>
+                Starring: {this.state.selectedVideo?.info.starring?.join(", ")}
+              </p>
+              <p hidden={!this.state.selectedVideo?.info.awardsAndNominations}>
+                <ul>
+                  {this.state.selectedVideo?.info.awardsAndNominations?.map(
+                    (a) => (
+                      <li>
+                        <div className="awards-and-nominations">
+                          <span>-</span>
+                          {a}
+                        </div>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </p>
+              <p hidden={!this.state.selectedVideo?.info.screenedAt}>
+                Screened at:{" "}
+                {this.state.selectedVideo?.info.screenedAt?.join(", ") + "."}
               </p>
             </div>
           </div>

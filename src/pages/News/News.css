@@ -40,10 +40,16 @@
 @media screen and (max-width: 768px) {
   .News .top {
     margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: baseline;
   }
 
   .News .news-item img {
     max-width: 100%;
     height: auto;
+  }
+
+  .News .news-item {
+    padding: 1rem;
   }
 }

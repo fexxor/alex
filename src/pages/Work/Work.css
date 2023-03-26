@@ -1,12 +1,21 @@
 .Work .video-fullscreen {
   position: fixed;
   inset: 0;
-  background-color: red;
+  background-color: #222;
+}
+
+.Work .top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Work .top-bar span {
+  font-size: 2rem;
+  padding: 2rem;
 }
 
 .Work .close-button {
-  display: block;
-  width: 100%;
   text-align: right;
   background-color: transparent;
   border: none;
@@ -15,6 +24,7 @@
   cursor: pointer;
   line-height: 0.8;
   padding: 1.2rem;
+  align-self: baseline;
 }
 
 .Work .container {
@@ -23,27 +33,45 @@
   padding: 2rem;
 }
 
-.Work .foo {
-  flex: 1;
+.Work .video-container {
+  flex: 2;
 }
 
 .Work iframe {
-  margin-right: 2rem;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  background-color: black;
 }
 
 .Work .info {
   flex: 1;
   overflow-y: auto;
+  padding-left: 2rem;
 }
 
 .Work p {
   padding-bottom: 2rem;
 }
 
+.awards-and-nominations {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.awards-and-nominations span {
+  padding: 0 0.5rem;
+}
+
 @media screen and (max-width: 768px) {
+  .Work .top-bar span {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
   .Work .close-button {
-    padding: 0.2rem;
+    padding: 1rem;
   }
 
   .Work .container {
@@ -58,11 +86,15 @@
     height: auto;
   }
 
-  .Work .foo {
+  .Work .video-container {
     flex: 1;
   }
 
   .Work p {
     padding-bottom: 1rem;
+  }
+
+  .Work .info {
+    padding-left: 0;
   }
 }
