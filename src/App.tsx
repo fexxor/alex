@@ -7,18 +7,25 @@ import Work from "./pages/Work/Work";
 import WorkFullscreen from "./pages/WorkFullscreen/WorkFullscreen";
 import About from "./pages/About/About";
 import News from "./pages/News/News";
-import { HashRouter, Route, Routes, Navigate, NavLink } from "react-router-dom";
+import {
+  HashRouter,
+  Route,
+  Routes,
+  Navigate,
+  NavLink,
+  Link,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <HashRouter //basename={currentPath || ""}
+      <HashRouter // basename={window.location.pathname || ""}
       >
         <main>
           <header className="App-header">
-            <a href="/#/work">
+            <Link to="/work">
               <h1>ALEXANDER KEREKLIDIS TURPIN</h1>
-            </a>
+            </Link>
             <nav>
               <div className="nav-links">
                 <NavLink
@@ -41,14 +48,26 @@ function App() {
                 </NavLink>
               </div>
               <div className="socials">
-                <a href="https://www.facebook.com/alexander.kereklidisturpin">
-                  <img src={fbLogo}></img>
+                <a
+                  href="https://www.facebook.com/alexander.kereklidisturpin"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={fbLogo} alt="Facebook"></img>
                 </a>
-                <a href="https://vimeo.com/user17012207">
-                  <img src={vimeoLogo}></img>
+                <a
+                  href="https://vimeo.com/user17012207"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={vimeoLogo} alt="Viemo"></img>
                 </a>
-                <a href="https://www.imdb.com/name/nm7794377">
-                  <img src={imdbLogo}></img>
+                <a
+                  href="https://www.imdb.com/name/nm7794377"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={imdbLogo} alt="IMDB"></img>
                 </a>
               </div>
             </nav>

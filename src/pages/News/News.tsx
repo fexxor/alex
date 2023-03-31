@@ -5,7 +5,7 @@ const news: NewsItem[] = [
   {
     timestamp: new Date("2020-01-01"),
     title: "4 new short films coming up in 2023!",
-    imageUrl: "alex/images/NEWS_4_new_short_films.png",
+    imageUrl: "/images/NEWS_4_new_short_films.png",
     paragraphs: [
       "In February, I had the great pleasure of working with the 3rd year acting students at Nord Universitetet in Verdal. During two weeks we shot 4 short films together. All the films are now in post production and will be released later in 2023!",
     ],

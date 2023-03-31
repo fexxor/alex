@@ -2,6 +2,7 @@ import React from "react";
 import "./Thumbnail.css";
 import playSvg from "../../play.svg";
 import { Video } from "../../types/Video";
+import { Link } from "react-router-dom";
 
 type ThumbnailProps = {
   video: Video;
@@ -9,7 +10,7 @@ type ThumbnailProps = {
 
 const Thumbnail: React.FC<ThumbnailProps> = ({ video }) => {
   return (
-    <a className="Thumbnail" href={"/#/view/" + video.id}>
+    <Link className="Thumbnail" to={"/view/" + video.id}>
       <img
         src={"https://vumbnail.com/" + video.id + ".jpg"}
         alt={video.title}
@@ -19,7 +20,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ video }) => {
       <div className="play-wrapper">
         <img className="play-icon" src={playSvg} />
       </div>
-    </a>
+    </Link>
   );
 };
 
