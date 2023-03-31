@@ -1,9 +1,10 @@
 import "./About.css";
+import portrait from "./portrait.jpg";
 
 const About: React.FC = ({}) => {
   return (
     <div className="About">
-      <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.6435-9/101849829_2994951363934820_8477774214740066081_n.jpg?stp=dst-jpg_s640x640&_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=khWHtyDl-VIAX873qPk&_nc_ht=scontent-arn2-1.xx&oh=00_AfAWl1juGZlNMUWSdPb77jiZAMU6fbuXulCOq-NF7GJrTg&oe=6440274D"></img>
+      <img src={portrait}></img>
       <div className="info">
         <p>Hello!</p>
         <p>
