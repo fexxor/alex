@@ -35,6 +35,11 @@ const About: React.FC = ({}) => {
           Don't hesitate to contact me. I'm always curious about new
           collaborations.
         </p>
+        <p>
+          kereklidis@proton.me
+          <br />
+          +47 40769208
+        </p>
       </div>
     </div>
   );

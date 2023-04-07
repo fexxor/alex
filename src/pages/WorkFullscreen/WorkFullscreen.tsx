@@ -12,37 +12,50 @@ const WorkFullscreen: React.FC = () => {
     <div className="WorkFullscreen">
       <div className="video-fullscreen">
         <div className="top-bar">
-          <span>{selectedVideo?.info.title}</span>
+          <span>{selectedVideo?.title}</span>
           <Link className="close-button" to="/#/work">
             ×
           </Link>
         </div>
         <div className="short-description">
-          {selectedVideo?.info.productionDescription}
+          {selectedVideo?.productionDescription}
         </div>
         <div className="container">
           <div className="video-container">
             <iframe
+              hidden={selectedVideo?.source !== "Vimeo"}
               src={"https://player.vimeo.com/video/" + selectedVideo?.id}
               allow="autoplay; fullscreen"
+              title="Embedded Vimeo"
             ></iframe>
+
+            <iframe
+              hidden={selectedVideo?.source !== "Youtube"}
+              width="853"
+              height="480"
+              src={`https://www.youtube.com/embed/${selectedVideo?.id}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Embedded Youtube"
+            />
           </div>
           <div className="info">
             <p hidden={!selectedVideo?.tagline}>{selectedVideo?.tagline}</p>
-            <p hidden={!selectedVideo?.info.description}>
-              {selectedVideo?.info.description}
+            <p hidden={!selectedVideo?.description}>
+              {selectedVideo?.description}
             </p>
 
-            <div hidden={!selectedVideo?.info.starring}>
+            <div hidden={!selectedVideo?.starring}>
               <h3>Starring</h3>
-              <p> {selectedVideo?.info.starring?.join(", ")}</p>
+              <p> {selectedVideo?.starring?.join(", ")}</p>
             </div>
 
-            <div hidden={!selectedVideo?.info.awardsAndNominations}>
+            <div hidden={!selectedVideo?.awardsAndNominations}>
               <h3>Awards and nominations</h3>
               <p>
                 <ul>
-                  {selectedVideo?.info.awardsAndNominations?.map((a) => (
+                  {selectedVideo?.awardsAndNominations?.map((a) => (
                     <li>
                       <div className="awards-and-nominations">{a}</div>
                     </li>
@@ -50,10 +63,31 @@ const WorkFullscreen: React.FC = () => {
                 </ul>
               </p>
             </div>
-            <div hidden={!selectedVideo?.info.screenedAt}>
+            <div
+              hidden={
+                !(selectedVideo?.screenedAt || selectedVideo?.premieredAt)
+              }
+            >
               <h3>Screened at</h3>
-              <p>{selectedVideo?.info.screenedAt?.join(", ") + "."}</p>
+              <p className="premiered-at" hidden={!selectedVideo?.premieredAt}>
+                {selectedVideo?.premieredAt}
+              </p>
+              <p hidden={!selectedVideo?.screenedAt}>
+                {selectedVideo?.screenedAt?.join(", ") + "."}
+              </p>
             </div>
+
+            <p className="imdb" hidden={!selectedVideo?.imdbLink}>
+              For full cast and crew, visit<span> </span>
+              <a
+                href={selectedVideo?.imdbLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                IMDB
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>

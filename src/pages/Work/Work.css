@@ -66,7 +66,15 @@
   padding: 0 0.5rem;
 }
 
+.mobile-title {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
+  .mobile-title {
+    display: block;
+  }
+
   .Work .video-fullscreen {
     padding: 1rem;
   }
@@ -96,5 +104,9 @@
 
   .Work .info {
     padding-left: 0;
+  }
+
+  .Thumbnail {
+    margin-top: 1rem;
   }
 }

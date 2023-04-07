@@ -8,7 +8,7 @@
 }
 
 .WorkFullscreen h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: bolder;
 }
 
@@ -21,6 +21,7 @@
 .WorkFullscreen .top-bar span {
   font-size: 2rem;
   letter-spacing: 5px;
+  text-transform: uppercase;
 }
 
 .short-description {
@@ -64,8 +65,9 @@
 }
 
 .WorkFullscreen p {
-  padding-bottom: 2rem;
+  padding-bottom: 1.2rem;
 }
+
 ul {
   list-style: circle;
   padding-left: 1rem;
@@ -78,6 +80,14 @@ ul {
 
 .awards-and-nominations span {
   padding: 0 0.5rem;
+}
+
+.WorkFullscreen .premiered-at {
+  padding-bottom: 1rem;
+}
+
+.WorkFullscreen .imdb a {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {

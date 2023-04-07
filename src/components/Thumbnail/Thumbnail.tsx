@@ -12,13 +12,17 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ video }) => {
   return (
     <Link className="Thumbnail" to={"/view/" + video.id}>
       <img
-        src={"https://vumbnail.com/" + video.id + ".jpg"}
+        src={
+          video.source === "Vimeo"
+            ? "https://vumbnail.com/" + video.id + ".jpg"
+            : "https://img.youtube.com/vi/" + video.id + "/maxresdefault.jpg" // mqdefault or maxresdefault ?
+        }
         alt={video.title}
       />
       <div className="overlay"></div>
       <p className="video-title">{video.title}</p>
       <div className="play-wrapper">
-        <img className="play-icon" src={playSvg} />
+        <img className="play-icon" src={playSvg} alt="play-icon" />
       </div>
     </Link>
   );
