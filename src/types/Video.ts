@@ -11,6 +11,7 @@ export type Video = {
   screenedAt?: string[];
   aspectRatio: AspectRatio;
   imdbLink?: string;
+  altLink?: { href: string; linkText: string };
 };
 
 export type AspectRatio = "16:9" | "3:2";

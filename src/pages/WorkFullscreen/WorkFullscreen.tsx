@@ -42,6 +42,15 @@ const WorkFullscreen: React.FC = () => {
           </div>
           <div className="info">
             <p hidden={!selectedVideo?.tagline}>{selectedVideo?.tagline}</p>
+            <p hidden={!selectedVideo?.altLink} className="link">
+              <a
+                href={selectedVideo?.altLink?.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {selectedVideo?.altLink?.linkText}
+              </a>
+            </p>
             <p hidden={!selectedVideo?.description}>
               {selectedVideo?.description}
             </p>
@@ -77,7 +86,7 @@ const WorkFullscreen: React.FC = () => {
               </p>
             </div>
 
-            <p className="imdb" hidden={!selectedVideo?.imdbLink}>
+            <p className="link" hidden={!selectedVideo?.imdbLink}>
               For full cast and crew, visit<span> </span>
               <a
                 href={selectedVideo?.imdbLink}

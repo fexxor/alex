@@ -103,10 +103,14 @@ export const videos: Video[] = [
       "Go Short Nijmegen (2019 & 2020)",
       "Nordic Labor Film Festival (2021)",
     ],
-    id: "251934669",
+    id: "816898899",
     aspectRatio: "3:2",
     imdbLink:
       "https://www.imdb.com/title/tt6462198/fullcredits/?ref_=nm_flmg_t_3_dr",
+    altLink: {
+      linkText: "Watch film with English audio",
+      href: "https://vimeo.com/816910686",
+    },
   },
   {
     title: 'Pomi-T "Jarmos nightmare"',
