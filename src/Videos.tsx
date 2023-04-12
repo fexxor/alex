@@ -150,7 +150,7 @@ export const videos: Video[] = [
     productionDescription: "4 min (Independent, 2012)",
     tagline:
       "We see the malpractice of a stressed nurse through the eyes of her elderly patient.",
-    starring: ["Starring Sara Turpin", "Svetlana Söderberg-Nyman"],
+    starring: ["Sara Turpin", "Svetlana Söderberg-Nyman"],
     premieredAt:
       "Premiered at The Swedish Short Film Festival in 2012 (Honorable mention)",
     screenedAt: ["UNICA, Bulgaria (2012)", "Vårrullen (2013)"],

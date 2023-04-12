@@ -8,9 +8,10 @@ const About: React.FC = ({}) => {
       <div className="info">
         <p>Hello!</p>
         <p>
-          I'm a Swedish-Greek filmmaker based in Bergen, Norway. I grew up in
-          Stockholm, Sweden and moved to Norway in 2013 when I was admitted to
-          the Norwegian Film School in Lillehammer. (BFA in Directing)
+          I'm a Swedish filmmaker of Greek, Swedish and Finnish descent, based
+          in Bergen, Norway. I grew up in Stockholm, Sweden and moved to Norway
+          in 2013 when I was admitted to the Norwegian Film School in
+          Lillehammer. (BFA in Directing)
         </p>
         <p>
           I love political topics, strong female characters, alternate
@@ -36,7 +37,7 @@ const About: React.FC = ({}) => {
           collaborations.
         </p>
         <p>
-          kereklidis@proton.me
+          aakt89@gmail.com
           <br />
           +47 40769208
         </p>
