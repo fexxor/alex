@@ -103,7 +103,7 @@ export const videos: Video[] = [
       "Go Short Nijmegen (2019 & 2020)",
       "Nordic Labor Film Festival (2021)",
     ],
-    id: "816898899",
+    id: "817223540",
     aspectRatio: "3:2",
     imdbLink:
       "https://www.imdb.com/title/tt6462198/fullcredits/?ref_=nm_flmg_t_3_dr",
@@ -113,10 +113,10 @@ export const videos: Video[] = [
     },
   },
   {
-    title: 'Pomi-T "Jarmos nightmare"',
+    title: "Jarmo's Nightmare",
     source: "Vimeo",
     productionDescription: "30 sek (Independent, 2017)",
-    description: "Commercial",
+    description: "Commercial for nutritional supplement producer Pomi-T.",
     starring: ["Jarmo Mäkinen"],
     id: "211695265",
     aspectRatio: "16:9",
